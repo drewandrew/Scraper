@@ -1,8 +1,18 @@
 defmodule ScraperTest do
   use ExUnit.Case
-  doctest Scraper
+  use Hound.Helpers
 
-  test "the truth" do
-    assert 1 + 1 == 2
+  setup do
+    Hound.start_session
+    :ok
   end
+
+  test "the truth", meta do
+    navigate_to("http://www.google.com")
+
+    url = current_url() |> IO.puts
+
+    current_url() == url
+  end
+
 end

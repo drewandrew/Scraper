@@ -15,7 +15,7 @@ defmodule Scraper.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger, :hound]]
+    [extra_applications: [:logger, :hound, :httpoison]]
   end
 
   # Dependencies can be Hex packages:
@@ -30,7 +30,8 @@ defmodule Scraper.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.12"},
-      {:hound, "~> 1.0"}
+      {:hound, "~> 1.0"},
+      {:floki, "~> 0.17.0"}
     ]
   end
 end

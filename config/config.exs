@@ -33,7 +33,8 @@ use Mix.Config
 #config :hound, app_host: "http://localhost", app_port: 4000
 
 # Start with selenium driver (default)
-config :hound, port: 4444, driver: "selenium", retry_time: 1500
+config :hound, port: 4444, driver: "selenium"
+config :hound, http: [recv_timeout: :infinity]
 
 # Use Chrome with the default driver (selenium)
 # config :hound, port: 4444, browser: "chrome"

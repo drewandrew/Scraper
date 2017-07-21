@@ -1,14 +1,12 @@
 defmodule HoundTest do
-  alias Hound.Helpers.{Navigation, Page, Element}
+  use Hound.Helpers
 
   def init() do
     Hound.start_session
 
-    Navigation.navigate_to("https://www.porhub.com", 5)
-    url = Navigation.current_url()
-    IO.puts url
-
-    Hound.end_session
+    navigate_to("http://grillwork.io")
+    el = find_element(:class, "navbar-brand")
+    inner_text(el)    
   end
 
 
